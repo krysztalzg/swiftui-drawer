@@ -1,9 +1,6 @@
 //
 //  Drawer.swift
 //
-//
-//  Created by Michael Verges on 7/14/20.
-//
 
 import SwiftUI
 
@@ -24,6 +21,9 @@ public struct Drawer<Content>: View where Content: View {
             didRest?(restingHeight)
         }
     }
+
+    /// Flag indicating if drawer was displayed. Used to apply first resting height as initial.
+    @State var didAppear: Bool = false
     
     /// A callback executed when the drawer reaches a restingHeight
     internal var didRest: ((_ height: CGFloat) -> ())? = nil

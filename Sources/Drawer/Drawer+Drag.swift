@@ -1,9 +1,6 @@
 //
 //  Drawer+Drag.swift
 //
-//
-//  Created by Michael Verges on 7/18/20.
-//
 
 import SwiftUI
 
@@ -23,10 +20,10 @@ internal extension Drawer {
         dragging = true
         
         height = Drawer.dampen(
-            value.startLocation.y
-            + restingHeight - value.location.y,
+            value.startLocation.y + restingHeight - value.location.y,
             range: activeBound,
-            spring: springHeight)
+            spring: springHeight
+        )
 
         animation = Animation?.none
     }
@@ -34,8 +31,7 @@ internal extension Drawer {
     func dragEnded(_ value: DragGesture.Value) {
         dragging = false
         
-        let change = value.startLocation.y
-            - value.predictedEndLocation.y + restingHeight
+        let change = value.startLocation.y - value.predictedEndLocation.y + restingHeight
         height = Drawer.closest(change, markers: heights)
         restingHeight = height
         animation = Animation.spring()

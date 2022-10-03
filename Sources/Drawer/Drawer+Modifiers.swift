@@ -1,9 +1,6 @@
 //
 //  Drawer+Modifiers.swift
 //
-//
-//  Created by Michael Verges on 7/15/20.
-//
 
 import SwiftUI
 
